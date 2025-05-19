@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginForm.AssessmentPage"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <StackLayout>
+            <Frame WidthRequest="1500" 
+                   Margin="20" 
+                   BackgroundColor="White" 
+                   CornerRadius="10" 
+                   BorderColor="Transparent"
+                   HorizontalOptions="Center"
+                   HasShadow="True">
+
+                <StackLayout Spacing="0">
+                    <!-- Header -->
+                    <Frame BackgroundColor="#2E7D32" 
+                           Padding="20"
+                           CornerRadius="0"
+                           HasShadow="False">
+                        <Label Text="My Profile" 
+                               TextColor="White" 
+                               FontSize="24" 
+                               FontAttributes="Bold" 
+                               HorizontalOptions="Center" />
+                    </Frame>
+
+                    <!-- Profile Photo with Upload -->
+                    <Frame CornerRadius="75" 
+                       HeightRequest="150" 
+                       WidthRequest="150" 
+                       Padding="0" 
+                       IsClippedToBounds="True"
+                       BackgroundColor="#E0E0E0"
+                       BorderColor="Transparent"
+                       HorizontalOptions="Center">
+
+                        <Grid>
+                            <!-- Default profile image or uploaded image will display here -->
+                            <Image x:Name="ProfileImage" 
+                               Aspect="AspectFill" 
+                               HeightRequest="150"
+                               WidthRequest="150"/>
+
+                            <!-- Semi-transparent overlay with camera icon -->
+                            <Grid BackgroundColor="#80000000" 
+                              x:Name="UploadOverlay" 
+                              InputTransparent="False">
+
+                                <StackLayout VerticalOptions="Center" 
+                                         HorizontalOptions="Center">
+                                    <Label Text="&#xf030;" 
+                                       FontFamily="FontAwesome" 
+                                       TextColor="White" 
+                                       FontSize="32"
+                                       HorizontalOptions="Center" />
+                                    <Label Text="Tap to change" 
+                                       TextColor="White" 
+                                       FontSize="12" 
+                                       HorizontalOptions="Center" />
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Profile Info -->
+                    <StackLayout HorizontalOptions="Center" Spacing="5">
+                        <Label Text="Jay Ribaya" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#333333" 
+                                   HorizontalOptions="Center" />
+                        <Label Text="Instructor Number: 123456" 
+                                   FontSize="14" 
+                                   TextColor="#666666" 
+                                   HorizontalOptions="Center" />
+                    </StackLayout>
+
+                    <!-- Form Fields -->
+                    <StackLayout Spacing="15" Margin="0,15,0,0">
+                        <!-- Full Name -->
+                        <StackLayout>
+                            <Label Text="Full Name" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#555555" />
+                            <Entry x:Name="NameEntry" 
+                                       Text="Jay Ribaya" 
+                                       Placeholder="Enter your full name" />
+                        </StackLayout>
+
+                        <!-- Email -->
+                        <StackLayout>
+                            <Label Text="Email Address" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#555555" />
+                            <Entry x:Name="EmailEntry" 
+                                       Text="jay.ribaya@example.com" 
+                                       Placeholder="Enter your email address"
+                                       Keyboard="Email" />
+                        </StackLayout>
+
+                        <!-- Phone Number -->
+                        <StackLayout>
+                            <Label Text="Phone Number" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#555555" />
+                            <Entry x:Name="PhoneEntry" 
+                                       Text="+1 (555) 123-4567" 
+                                       Placeholder="Enter your phone number"
+                                       Keyboard="Telephone" />
+                        </StackLayout>
+
+                        <!-- Department -->
+                        <StackLayout>
+                            <Label Text="Department" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#555555" />
+                            <Entry x:Name="DepartmentEntry" 
+                                       Text="Computer Science" 
+                                       Placeholder="Enter your department" />
+                        </StackLayout>
+
+                        <!-- Save Button -->
+                        <Button x:Name="SaveButton" 
+                                    Text="Save Changes" 
+                                    BackgroundColor="#2E7D32" 
+                                    TextColor="White" 
+                                    FontSize="16"
+                                    CornerRadius="4"
+                                    Padding="0,12"
+                                    Margin="0,10,0,0" />
+                    </StackLayout>
+                </StackLayout>
+
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
